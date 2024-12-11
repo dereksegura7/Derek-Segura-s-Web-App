@@ -112,7 +112,7 @@
         <section id="feedback" class="game-container" style="display: none;">
             <h2>Sequence Complete</h2>
             <p id="user-response" style="font-size: 1.2em;"></p>
-            <button onclick="nextLevel()">Next Level</button>
+            <button onclick="nextGame()">Try Again</button>
         </section>
     </main>
 
@@ -159,7 +159,7 @@
             const button = document.querySelector(`.color-button[onclick="userSelect('${color}')"]`);
             button.style.backgroundColor = color;
             setTimeout(() => {
-                button.style.backgroundColor = color === 'red' ? '#e74c3c' : color === 'blue' ? '#3498db' : color === 'green' ? '#2ecc71' : '#f1c40f';
+                button.style.backgroundColor = '#3498db'; // Reset to plain color after brief display
             }, 300);
         }
 
@@ -195,7 +195,7 @@
             }
         }
 
-        function nextLevel() {
+        function nextGame() {
             document.getElementById('feedback').style.display = 'none';
             startGame();
         }
